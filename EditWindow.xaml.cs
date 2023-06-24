@@ -27,5 +27,9 @@ namespace NET_ININ3_PR2_Z3
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
