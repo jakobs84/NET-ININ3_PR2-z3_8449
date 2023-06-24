@@ -20,7 +20,7 @@
         <Button Grid.Column="1" Name="btnDel" Width="50" Content="Del" HorizontalAlignment="Left" Margin="50,0,0,0" Height="75" VerticalAlignment="Top" Click="btnDel_Click"/>
         <Button Grid.Column="1" Name="btnClear" Width="50" Content="Clear" HorizontalAlignment="Left" Margin="100,0,0,0" Click="btnClear_Click"/>
         <Button Grid.Column="1" Name="btnEdit" Width="50" Content="Edit" HorizontalAlignment="Left" Margin="150,0,0,0" Click="btnEdit_Click"/>
-        <ListBox Name="lvEntries" Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}">
+        <ListBox Name="lvEntries" Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}" SelectionChanged="lvEntries_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="2">

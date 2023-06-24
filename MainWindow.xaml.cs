@@ -65,14 +65,15 @@ namespace NET_ININ3_PR2_Z3
             Filmy selectedItem = (Filmy)lvEntries.SelectedItem;
             EditWindow editWindow = new EditWindow(selectedItem);
             editWindow.Show();
-            //               new EditWindow(selectedItem).Show();
 
-            //   EditWindow editWindow = new EditWindow(selectedItem);
-            //    editWindow.Show();
-            //           new EditWindow = (Filmy)
-            //           new EditWindow(Filmy).S
-            //Entries.Remove(selectedItem);
 
+        }
+
+        private void lvEntries_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filmy selectedItem = (Filmy)lvEntries.SelectedItem;
+            EditWindow editWindow = new EditWindow(selectedItem);
+            editWindow.Show();
         }
     }
 
