@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,36 @@ namespace NET_ININ3_PR2_Z3
     {
         public MainWindow()
         {
+            DataContext = this;
+            entries = new ObservableCollection<string>();
+
             InitializeComponent();
+        }
+
+        private ObservableCollection<string> entries;
+
+        public ObservableCollection<string> Entries
+        {
+            get { return entries; }
+            set { entries = value; }
+        }
+
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Entries.Add(txtEnter.Text);
+
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            Entries.Clear();
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            string selectedItem = (string)lvEntries.SelectedItem;
+            Entries.Remove(selectedItem);
         }
     }
 }

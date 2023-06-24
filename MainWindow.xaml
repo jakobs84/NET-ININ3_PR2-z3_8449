@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NET_ININ3_PR2_Z3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="400">
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="txtEnter" FontSize="16" Height="35"/>
+        <Button Grid.Column="1" Name="btnAdd" Width="50" Content="Add" HorizontalAlignment="Left" Click="btnAdd_Click"/>
+        <Button Grid.Column="1" Name="btnDel" Width="50" Content="Del" HorizontalAlignment="Left" Margin="60,0,0,0" Height="75" VerticalAlignment="Top" Click="btnDel_Click"/>
+        <Button Grid.Column="1" Name="btnClear" Width="50" Content="Clear" HorizontalAlignment="Left" Margin="120,0,0,0" Click="btnClear_Click"/>
+
+        <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}"></ListView>
+
+
     </Grid>
 </Window>
