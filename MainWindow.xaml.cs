@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,14 +25,14 @@ namespace NET_ININ3_PR2_Z3
         public MainWindow()
         {
             DataContext = this;
-            entries = new ObservableCollection<string>();
+            entries = new ObservableCollection<Filmy>();
 
             InitializeComponent();
         }
 
-        private ObservableCollection<string> entries;
+        private ObservableCollection<Filmy> entries;
 
-        public ObservableCollection<string> Entries
+        public ObservableCollection<Filmy> Entries
         {
             get { return entries; }
             set { entries = value; }
@@ -40,7 +41,8 @@ namespace NET_ININ3_PR2_Z3
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Entries.Add(txtEnter.Text);
+            //Entries.Add(txtEnter.Text);
+            Entries.Add(new Filmy());
 
         }
 
@@ -51,8 +53,29 @@ namespace NET_ININ3_PR2_Z3
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            string selectedItem = (string)lvEntries.SelectedItem;
+  ///          Entries.Remove(new Filmy());
+   //         string selectedItem = (string)lvEntries.SelectedItem;
+  //          Entries.Remove(selectedItem);
+            Filmy selectedItem = (Filmy)lvEntries.SelectedItem;
             Entries.Remove(selectedItem);
         }
+    }
+
+    public class Filmy
+    {
+        public Filmy()
+        {
+            title = "";
+            director = "";
+            studio = "";
+            medium = "";
+            releaseDate = DateTime.Parse("12.12.2000");
+        }
+
+        public string title { get; set; } 
+        public string director { get; set; }
+        public string studio { get; set; }
+        public string medium { get; set; }
+        public DateTime releaseDate { get; set; }
     }
 }

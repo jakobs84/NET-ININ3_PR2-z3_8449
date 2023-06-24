@@ -21,9 +21,29 @@
         <Button Grid.Column="1" Name="btnAdd" Width="50" Content="Add" HorizontalAlignment="Left" Click="btnAdd_Click"/>
         <Button Grid.Column="1" Name="btnDel" Width="50" Content="Del" HorizontalAlignment="Left" Margin="60,0,0,0" Height="75" VerticalAlignment="Top" Click="btnDel_Click"/>
         <Button Grid.Column="1" Name="btnClear" Width="50" Content="Clear" HorizontalAlignment="Left" Margin="120,0,0,0" Click="btnClear_Click"/>
+        <ListBox Name="lvEntries" Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="2">
+                        <TextBlock Text="Tytuł: " Margin="2"/>
+                        <TextBlock Text="{Binding title}" Margin="2"/>
+                        <TextBlock Text=", Reżyser: " Margin="2"/>
+                        <TextBlock Text="{Binding director}" Margin="2"/>
+                        <TextBlock Text=", Studio: " Margin="2"/>
+                        <TextBlock Text="{Binding studio}" Margin="2"/>
+                        <TextBlock Text=", Nośnik: " Margin="2"/>
+                        <TextBlock Text="{Binding medium}" Margin="2"/>
+                        <TextBlock Text=", Data Wydania: " Margin="2"/>
+                        <TextBlock Text="{Binding releaseDate}" Margin="2"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
 
+        </ListBox>
+        
+        <!--
         <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}"></ListView>
-
-
+        -->
+        
     </Grid>
 </Window>
